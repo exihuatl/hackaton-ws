@@ -27,6 +27,7 @@ function App() {
     }
   }, [])
 
+  const clear = () => ws.send('CLEAR')
   const onClick = num => () => {
     const payload = {
       [id]: num
@@ -37,10 +38,14 @@ function App() {
   return (
     <div className="app">
       {arr.map(x => (
-        <button className="card" onClick={onClick(x)}>
+        <button className="card" key={x} onClick={onClick(x)}>
           {x}
         </button>
       ))}
+      <hr />
+      <button className="card" onClick={clear}>
+        Wyczyść
+      </button>
     </div>
   )
 }
