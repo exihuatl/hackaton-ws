@@ -4,10 +4,6 @@ import './App.css'
 
 const ws = new WebSocket('ws://192.168.6.205:8080')
 
-ws.onopen = function open() {
-  ws.send('something')
-}
-
 ws.onmessage = function incoming(data) {
   console.log(data)
 }
@@ -30,7 +26,8 @@ function App() {
   const clear = () => ws.send('CLEAR')
   const onClick = num => () => {
     const payload = {
-      [id]: num
+      id,
+      num
     }
     ws.send(JSON.stringify(payload))
     console.log('payload', payload)
