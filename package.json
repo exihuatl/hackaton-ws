@@ -10,9 +10,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
+    "uuid": "^3.3.2",
     "ws": "^6.2.1"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "http://192.168.6.205:8080",
   "scripts": {
     "start": "yarn client:start",
     "server:start": "nodemon ./server.js",
